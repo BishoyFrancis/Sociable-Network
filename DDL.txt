@@ -1,0 +1,50 @@
+create schema social_network collate latin1_swedish_ci;
+
+create table user
+(
+	user_id int(255) auto_increment
+		primary key,
+	firstname varchar(255) not null,
+	lastname varchar(255) not null,
+	email varchar(255) not null,
+	password varchar(255) not null,
+	phonenumber varchar(255) not null,
+	gender varchar(255) not null,
+	birthdate date not null,
+	profilepicture varchar(255) not null,
+	hometown varchar(255) not null,
+	martialstatus varchar(255) not null,
+	about_me varchar(255) null
+);
+
+create table posts
+(
+	user_id int(255) not null,
+	caption varchar(255) not null,
+	image varchar(255) not null,
+	time timestamp(6) default current_timestamp(6) not null on update current_timestamp(6),
+	state varchar(255) not null,
+	constraint posts_ibfk_1
+		foreign key (user_id) references user (user_id)
+);
+
+create index user_id
+	on posts (user_id);
+
+create table requests
+(
+	sender_id int(255) null,
+	receiver_id int(255) null,
+	state varchar(255) null,
+	constraint requests_ibfk_1
+		foreign key (sender_id) references user (user_id),
+	constraint requests_ibfk_2
+		foreign key (receiver_id) references user (user_id)
+);
+
+create index receiver_id
+	on requests (receiver_id);
+
+create index sender_id
+	on requests (sender_id);
+

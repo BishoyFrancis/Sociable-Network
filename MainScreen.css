@@ -1,0 +1,61 @@
+
+.container-fluid{
+    margin-left: -50px;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.navbar .btn{
+    margin-left: 5px;
+    border-width: 2px;
+    border-color: white;
+    color: white;
+}
+
+.navbar .btn:hover{
+    background-color: white;
+    font-style: italic;
+    color: darkgreen;
+    font-weight: bold;
+}
+
+
+#socialpicture{
+    padding-top: 50px;
+    width: 630px;
+}
+
+.navbar .form-inline{
+    margin-left: 410px;
+}
+
+.form-inline input[type=text]{
+}
+
+.form-inline input[type=text]::placeholder{
+}
+
+.form-inline input[type=password]{
+}
+
+#SignupButton{
+    border-color: darkgreen;
+    border-width: 2px;
+    border-radius: 500px;
+}
+
+#SignupButton:hover{
+    background-color: darkgreen;
+    border-color: white;
+    color: white;
+
+}
+
+
